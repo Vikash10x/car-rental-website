@@ -1,7 +1,7 @@
 # Node modules
 node_modules/
 
-# Environment variables
+# Environment   variables
 .env
 .env.local
 temp_auto_push.bat

@@ -81,7 +81,7 @@ Refer to server controllers and `routes/` for the full list.
 
 ## Deployment
 - The backend can be deployed to platforms like Heroku, Render, or Vercel (serverless functions may need adaptation).
-- The frontend (Vite) can be deployed to Vercel, Netlify, or similar static hosting with API base URL pointing to the deployed server.
+- The frontend (Vite) can be deployed to Vercel, Netlify, or similar static hosting  with API base URL pointing  to the deployed server.
 
 ## Contributing
 - Fork the repo, create a feature branch, and open a pull request. Follow the existing code style and commit messages.
