@@ -7,7 +7,7 @@ import ownerRouter from "./routes/ownerRoutes.js";
 import bookingRouter from "./routes/bookingRoute.js";
 
 // initiliaze express app 
-const app=express();
+const app = express();
 
 // connect Database 
 await connectDB()
@@ -16,11 +16,11 @@ await connectDB()
 app.use(cors());
 app.use(express.json());
 
-app.get('/',(req,res)=>res.send("Server is running"))
-app.use('/api/user',userRouter)
-app.use('/api/owner',ownerRouter)
-app.use('/api/bookings',bookingRouter)
+app.get('/', (req, res) => res.send("Server is running"))
+app.use('/api/user', userRouter)
+app.use('/api/owner', ownerRouter)
+app.use('/api/bookings', bookingRouter)
 
-const PORT=process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT,()=>console.log(`Server is running on Port ${PORT}`))
+app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`))
