@@ -8,7 +8,7 @@ axios.defaults.baseURL=import.meta.env.VITE_BASE_URL
 export const AppProvider =({children})=>{
 
     const navigate=useNavigate()
-    const currency =import.meta.env.VITE_CURRENCY
+    const currency = import.meta.env.VITE_CURRENCY || '$'
     const [token, setToken] = useState(null)
     const [user, setUser] = useState(null)
     const [isOwner, setIsOwner] = useState(false)
