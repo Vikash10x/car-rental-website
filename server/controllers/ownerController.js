@@ -175,3 +175,26 @@ export const updateUserImage=async(req,res)=>{
         console.log(error.message)
     }
 }
+
+// api to update car details
+export const updateCar = async (req, res) => {
+    try {
+        const { _id } = req.user;
+        const { carId, carData } = req.body;
+        const car = await Car.findById(carId);
+
+        if (!car) {
+            return res.json({ success: false, message: "Car not found" });
+        }
+
+        if (car.owner.toString() !== _id.toString()) {
+            return res.json({ success: false, message: "Unauthorized" });
+        }
+
+        await Car.findByIdAndUpdate(carId, carData);
+        res.json({ success: true, message: "Car updated successfully" });
+    } catch (error) {
+        res.json({ success: false, message: error.message });
+        console.log(error.message);
+    }
+}
