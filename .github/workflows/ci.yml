@@ -1,0 +1,37 @@
+name: Car Rental CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Client
+      - name: Install client dependencies
+        working-directory: ./client
+        run: npm ci
+
+      - name: Build client
+        working-directory: ./client
+        run: npm run build
+
+      # Server
+      - name: Install server dependencies
+        working-directory: ./server
+        run: npm ci
